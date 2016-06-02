@@ -40,10 +40,10 @@ public class DelayedAction : MonoBehaviour {
 	/// Creates the using custom time. You are responsible for this object! it does not go away by itself
 	/// </summary>
 	/// <returns>The using custom time.</returns>
-	/// <param name="timeProvder">Time provder.</param>
-	public static DelayedActionCustomTime CreateUsingCustomTime( Func <float> timeProvder){
+	/// <param name="timeProvider">Time provider.</param>
+	public static DelayedActionCustomTime CreateUsingCustomTime( Func <float> timeProvider){
 		var component = CreateGhost ("DelayedActionCustomTime").AddComponent<DelayedActionCustomTime> ();
-		component.timeProvider = timeProvder;
+		component.timeProvider = timeProvider;
 		return component;
 	}
 
