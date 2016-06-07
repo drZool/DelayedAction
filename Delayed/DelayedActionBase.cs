@@ -24,7 +24,15 @@ public class DelayedActionBase : MonoBehaviour
 		return uniqueId - 1;
 	}
 
-	public void Remove(int id){		
+    public void Remove(int? id)
+    {
+        if (id.HasValue)
+        {
+            Remove(id.Value);
+        }
+    }
+
+    public void Remove(int id){		
 		for (int i = 0; i < sortedActions.Count; ++i) {
 			if (sortedActions [i].id == id) {
 				sortedActions.RemoveAt (i);
