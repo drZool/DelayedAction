@@ -6,7 +6,7 @@ using System;
 public class DelayedAction : MonoBehaviour {
 	
 	static GameObject CreateGhost(string name){
-		var go = new GameObject ("DelayedAction");
+		var go = new GameObject (name);
 		GameObject.DontDestroyOnLoad (go);
 		go.hideFlags = HideFlags.HideAndDontSave;
 		return go;

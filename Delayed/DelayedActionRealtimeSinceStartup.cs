@@ -8,8 +8,9 @@ public class DelayedActionRealtimeSinceStartup : DelayedActionBase {
 
 	void Update () {
 		while (sortedActions.Count > 0 && sortedActions [0].time < Time.realtimeSinceStartup) {
-			sortedActions [0].action.Invoke ();
+			var a = sortedActions [0];
 			sortedActions.RemoveAt (0);
+			a.action.Invoke ();
 		}
 	}
 
